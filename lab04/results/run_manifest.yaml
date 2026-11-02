@@ -1,0 +1,18 @@
+config:
+  seed: 42
+  dataset:
+    name: adult
+    version: 2
+  split:
+    test_size: 0.3
+  cleaning:
+    clip_lower: 0.01
+    clip_upper: 0.99
+  audit:
+    sample_size: 50
+  paths:
+    results: results
+processed_file: results\processed_adult.csv
+sha256: 134c1a721928df219d748df4286646d54173b22bf933a9ee3f824231aede1498
+train_rows_after_dedupe: 34165
+test_rows: 14653

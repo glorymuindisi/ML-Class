@@ -1,0 +1,13 @@
+seed: 42
+dataset:
+  name: adult
+  version: 2
+split:
+  test_size: 0.3
+cleaning:
+  clip_lower: 0.01
+  clip_upper: 0.99
+audit:
+  sample_size: 50
+paths:
+  results: results

@@ -1,0 +1,8 @@
+{
+  "duplicate_conflict_groups": 5,
+  "rows_in_conflicting_groups": 10,
+  "random_sample_size": 50,
+  "impossible_values_in_sample": 0,
+  "education_vs_education_num_inconsistencies": [],
+  "note": "Sample saved to label_audit_sample50.csv. Re-check these 50 rows by hand against the data dictionary and add your findings to your report."
+}

@@ -1,0 +1,10 @@
+2026-11-02 20:10:14,021 INFO INGESTION: row count = 48842, column count = 15
+2026-11-02 20:10:14,114 INFO VALIDATION: 0 violations (rows are NOT dropped). Missing per column: {'workclass': 2799, 'occupation': 2809, 'native-country': 857}
+2026-11-02 20:10:14,372 INFO LABEL AUDIT: 5 conflicting duplicate groups (10 rows)
+2026-11-02 20:10:14,434 INFO SPLIT: train=34189, test=14653
+2026-11-02 20:10:14,474 INFO DUPLICATES: dropped 24 exact duplicate rows from train; test untouched
+2026-11-02 20:10:15,330 INFO BASELINE without_derived_features: {'accuracy': 0.8539548215382515, 'f1_>50K': 0.6601016518424396}
+2026-11-02 20:10:15,904 INFO BASELINE with_derived_features: {'accuracy': 0.8577765645260357, 'f1_>50K': 0.6696258719086874}
+2026-11-02 20:10:16,528 INFO PROCESSED DATA SHA256: 134c1a721928df219d748df4286646d54173b22bf933a9ee3f824231aede1498
+2026-11-02 20:10:16,534 INFO REPORT written to results\report.md
+2026-11-02 20:10:16,535 INFO DONE. Outputs are in results/

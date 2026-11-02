@@ -1,0 +1,10 @@
+{
+  "without_derived_features": {
+    "accuracy": 0.8539548215382515,
+    "f1_>50K": 0.6601016518424396
+  },
+  "with_derived_features": {
+    "accuracy": 0.8577765645260357,
+    "f1_>50K": 0.6696258719086874
+  }
+}
