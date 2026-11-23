@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/gmuin/ML Class/lab06/results/mlruns/704304021490704170/16c5d5ba9ccc4b15bdb0bd68820a7068/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '704304021490704170'
+lifecycle_stage: active
+run_id: 16c5d5ba9ccc4b15bdb0bd68820a7068
+run_name: task1_baseline
+run_uuid: 16c5d5ba9ccc4b15bdb0bd68820a7068
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1795467818679
+status: 1
+tags: []
+user_id: gmuin

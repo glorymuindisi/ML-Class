@@ -1,0 +1,42 @@
+seed: 42
+results_dir: "lab06/results"
+checkpoint_dir: "lab06/results/checkpoints"
+mlflow_tracking_uri: "file:./lab06/results/mlruns"
+mlflow_experiment_name: "Lab06_Training_Pipelines"
+
+dataset:
+  name: "FashionMNIST"
+  data_dir: "./data"
+  num_workers: 2
+  pin_memory: true
+
+model:
+  in_channels: 1
+  num_classes: 10
+  hidden_channels: [32, 64]
+  dropout: 0.25
+
+training:
+  epochs: 5
+  batch_size: 64
+  accumulation_steps: 1
+  optimizer: "adam"
+  lr: 0.001
+  momentum: 0.9
+  weight_decay: 0.0001
+  scheduler: "cosine"
+  step_size: 3
+  gamma: 0.5
+  resume_from: null
+  interrupt_at_epoch: null
+
+tasks:
+  run_baseline: true
+  run_profiler: true
+  run_worker_sweep: true
+  worker_candidates: [0, 1, 2, 4, 8]
+  run_batch_sweep: true
+  batch_candidates: [32, 64, 128, 256, 512]
+  run_optim_sched_sweep: true
+  run_grad_accum: true
+  run_resume_demo: true
