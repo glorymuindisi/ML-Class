@@ -6,6 +6,8 @@ predict whether a person earns more than $50K a year. Success is measured with a
 and F1 (positive class `>50K`) on a held-out test set. The pipeline must also check data
 quality and be rebuilt with one command.
 
+
+
 #Method
 1. **Ingestion:** `fetch_openml(name='adult', version=2, as_frame=True)`, read without
    changes. Logged 48842 rows and 15 columns.
@@ -50,6 +52,14 @@ quality and be rebuilt with one command.
 | Processed data SHA256 | `134c1a721928df219d748df4286646d54173b22bf933a9ee3f824231aede1498` |
 
 ## Conclusions
-1. The derived features improved the baseline
-2. Accuracy alone is misleading on this data The best baseline reaches 85.8% accuracy, only 9.7 points above that, while its F1 on the >50K class is 0.670. This is why both metrics are reported.
-3. Data quality and pipeline design make the scores trustworthy. Validation found 0 type or range violations.
+1.The derived features improved the baseline slightly. Adding capital_net and hours_per_age raised accuracy from 0.8540 to 0.8578 (+0.0038) and F1 on the >50K class from 0.6601 to 0.6696 (+0.0095). The gain is small and comes from a single split, so it should be confirmed with repeated seeds or cross-validation before calling it a firm improvement.
+2. Accuracy alone is misleading on this data. The best baseline reaches 85.8% accuracy, only 9.7 points above that, while its F1 on the >50K class is 0.670. This is why both metrics are reported.
+3. Data quality and pipeline design make the scores trustworthy. Validation found 0 type or range violations. The 70/30 stratified split was done before any cleaning, and the cleaner was fitted on train data only, so no test information leaked into training. Duplicates were dropped from train only, and the processed data hash and python run_pipeline.py make the results reproducible
+4. Stratified means the split keeps the same class proportions in both train and test sets. 
+eg if  23.9% of people earn >50K. A random split could by chance give the test
+set 22% or 26%. A stratified split forces both train and test to have about 23.9% each, 
+so the two sets stay comparable and your F1 score on the rare class is more reliable. 
+less stable training and unfair evaluation
+we use it when we split data for a classification problem
+
+
